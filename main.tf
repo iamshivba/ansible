@@ -71,3 +71,15 @@ resource "aws_instance" "ec2_ansible" {
          Name = "Server-${count.index +1}"
      }
 }
+
+resource "aws_instance" "ec2_ansible" {
+      ami = data.aws_ami.server_ami.id
+      instance_type = "t3.micro"
+      key_name = data.aws_key_pair.my_key.key_name
+      vpc_security_group = [aws_security_group.ansible_sg.id]
+      associate_public_ip_address = true
+
+      tags = {
+        Name = "Ansible-Master"
+      }
+}
