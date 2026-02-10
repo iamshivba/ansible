@@ -72,7 +72,7 @@ resource "aws_instance" "ec2_ansible" {
      }
 }
 
-resource "aws_instance" "ec2_ansible" {
+resource "aws_instance" "ec2_ansible1" {
       ami = data.aws_ami.server_ami.id
       instance_type = "t3.micro"
       key_name = data.aws_key_pair.my_key.key_name
