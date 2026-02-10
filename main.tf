@@ -4,12 +4,12 @@ data "aws_ami" "server_ami" {
 
 filter {
     name = "name"
-    value =["al2023-ami-*-x86_64"] 
+    values =["al2023-ami-*-x86_64"] 
    }
 
 filter {
     name = "virtualization type"
-    value =["hvm"]
+    values =["hvm"]
    }
 }
 
@@ -27,7 +27,7 @@ resource "aws_security_group" "ansible_sg" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
      }
 
      ingress {
@@ -35,7 +35,7 @@ resource "aws_security_group" "ansible_sg" {
         from_port = 80
         to_port = 80
         protocol = "tcp"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
     ingress {
@@ -43,7 +43,7 @@ resource "aws_security_group" "ansible_sg" {
        from_port = 443
        to_port = 443
        protocol = "tcp"
-       cidr_block = ["0.0.0.0/0"]
+       cidr_blocks = ["0.0.0.0/0"]
     }
 
     egress {
