@@ -18,7 +18,7 @@ data "aws_key_name" "my_key" {
     include_public_key = true
 }
 
-resource "aws_ecurity_group" "ansible_sg" {
+resource "aws_security_group" "ansible_sg" {
      name = "ansbile_security_group"
      description = "Allow SSH, HTTP and HTTPS traffic"
 
