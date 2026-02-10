@@ -1,13 +1,14 @@
-data "aws_ami" "amazon_linux"{
-    most recent = "true"
-    owners = ["amazon"]
+data "aws_ami" "amazon_linux" {
+    most_recent = true                
+    owners      = ["amazon"]
 
     filter {
-      name = "name"
-      values = ["al23-ami-hvm-*-x86_64-kernel-*"]
+      name   = "name"
+      values = ["al2023-ami-*-x86_64"]   
     }
+    
     filter {
-      name = "virtualizator-type"
+      name   = "virtualization-type"    
       values = ["hvm"]
     }
 }
