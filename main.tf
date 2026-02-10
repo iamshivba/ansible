@@ -62,9 +62,9 @@ resource "aws_security_group" "ansible_sg" {
 resource "aws_instance" "ec2_ansible" {
       count = 3
       ami = data.aws_ami.server_ami.id
-      instance_tye = "t3.micro"
+      instance_type = "t3.micro"
       key_name = data.aws_key_pair.my_key.key_name
-      vpc_security_group_id = [aws_security_group.ansible_sg.id]
+      vpc_security_group_ids = [aws_security_group.ansible_sg.id]
       associate_public_ip_address = true 
 
       tags = {
