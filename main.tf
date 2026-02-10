@@ -13,7 +13,7 @@ filter {
    }
 }
 
-data "aws_key_name" "my_key" {
+data "aws_key_pair" "my_key" {
     key_name = "shiv_key"
     include_public_key = true
 }
