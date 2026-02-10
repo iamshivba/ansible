@@ -35,7 +35,7 @@ resource "aws_security_group" "ansible_sg" {
         from_port = 80
         to_port = 80
         protocol = "tcp"
-        cide_block = ["0.0.0.0/0"]
+        cidr_block = ["0.0.0.0/0"]
     }
 
     ingress {
@@ -51,7 +51,7 @@ resource "aws_security_group" "ansible_sg" {
        from_port = 0
        to_port = 0
        protocol = "-1" 
-       cidr_block = ["0.0.0.0/0]
+       cidr_block = ["0.0.0.0/0"]
     }
 
       tags = { 
