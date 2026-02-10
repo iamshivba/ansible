@@ -1,5 +1,5 @@
 data "aws_ami" "amazon_linux"{
-    most recent = true
+    most recent = "true"
     owners = ["amazon"]
 
     filter {
@@ -13,7 +13,7 @@ data "aws_ami" "amazon_linux"{
 }
 
 data "aws_key_pair" "my_key" {
-      kay_name = "shiv_key"
+      key_name = "shiv_key"
 }
 
 resource "aws_instance" "ec2_ansible" {
